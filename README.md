@@ -1,16 +1,34 @@
-# skilltest
+# 🛒 Flutter E-Commerce Skill Test
 
-A new Flutter project.
+A Flutter application built as part of the **Skill Test**, showcasing clean architecture, state management with **Bloc**, and integration with REST APIs for products, banners, authentication, and more.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
+- User Authentication (Register, Login, Verify OTP)
+- Banner Carousel (from API)
+- Product Grid with Wishlist integration
+- Search & Categories
+- Responsive UI
+- State Management with `flutter_bloc`
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 📸 Screenshots
+| Banner Carousel | Product Grid |
+|-----------------|--------------|
+| ![banner](assets/screenshots/banner.png) | ![products](assets/screenshots/products.png) |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🛠️ Tech Stack
+- **Framework**: Flutter (3.35.2)
+- **State Management**: flutter_bloc
+- **Networking**: http
+- **UI**: Material Design, Google Nav Bar
+- **Architecture**: Feature-based with MVVM
+
+---
+
+   ```bash
+   git clone https://github.com/<your-username>/<repo-name>.git
