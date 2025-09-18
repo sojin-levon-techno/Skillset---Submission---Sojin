@@ -29,6 +29,3 @@ A Flutter application built as part of the **Skill Test**, showcasing clean arch
 - **Architecture**: Feature-based with MVVM
 
 ---
-
-   ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git
