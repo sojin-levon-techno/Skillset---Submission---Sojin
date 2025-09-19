@@ -11,6 +11,7 @@ import 'package:skilltest/features/auth/views/pages/info_page.dart';
 import 'package:skilltest/features/auth/views/pages/otp_page.dart';
 import 'package:skilltest/features/auth/views/widgets/app_button.dart';
 import 'package:skilltest/features/bottom_nav/bottom_nav.dart';
+import 'package:skilltest/features/profile/pages/privacy_policy.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -191,23 +192,26 @@ class _LoginPageState extends State<LoginPage> {
                   },
                 ),
                 const SizedBox(height: 22),
-                Text.rich(
-                  textAlign: TextAlign.center,
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "By Continuing you accepting the ",
+                GestureDetector(
+                  onTap: () => context.push(page: PrivacyPolicy()),
+                  child: Text.rich(
+                    textAlign: TextAlign.center,
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "By Continuing you accepting the ",
 
-                        style: context.bodyMedium.copyWith(),
-                      ),
-                      TextSpan(
-                        text: "Terms of Use & Privacy Policy",
-                        style: context.bodyMedium.copyWith(
-                          fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.underline,
+                          style: context.bodyMedium.copyWith(),
                         ),
-                      ),
-                    ],
+                        TextSpan(
+                          text: "Terms of Use & Privacy Policy",
+                          style: context.bodyMedium.copyWith(
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
