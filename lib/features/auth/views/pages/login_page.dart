@@ -87,8 +87,18 @@ class _LoginPageState extends State<LoginPage> {
                       child: TextFormField(
                         maxLength: 10,
                         validator: (value) {
-                          if (value == null || value.isEmpty) {
+                          if (value == null || value.trim().isEmpty) {
                             return "Phone number is required";
+                          }
+
+                          final trimmed = value.trim();
+
+                          if (!RegExp(r'^[0-9]+$').hasMatch(trimmed)) {
+                            return "Phone number must contain only digits";
+                          }
+
+                          if (trimmed.length != 10) {
+                            return "Phone number must be 10 digits";
                           }
 
                           return null;
