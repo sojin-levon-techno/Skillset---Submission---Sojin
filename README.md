@@ -15,10 +15,12 @@ A Flutter application built as part of the **Skill Test**, showcasing clean arch
 ---
 
 ## 📸 Screenshots
-| Banner Carousel | Product Grid |
-|-----------------|--------------|
-| ![banner](assets/screenshots/banner.png) | ![products](assets/screenshots/products.png) |
-
+<p float="left">
+  <img src="assets/images/im1.jpeg" width="200" />
+  <img src="assets/images/im2.jpeg" width="200" />
+  <img src="assets/images/im3.jpeg" width="200" />
+  <img src="assets/images/im4.jpeg" width="200" />
+</p>
 ---
 
 ## 🛠️ Tech Stack
