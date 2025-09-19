@@ -9,8 +9,6 @@ import 'package:skilltest/core/extension/textstyle.dart';
 import 'package:skilltest/features/auth/bloc/auth_bloc.dart';
 import 'package:skilltest/features/auth/views/pages/info_page.dart';
 import 'package:skilltest/features/auth/views/pages/otp_page.dart';
-import 'package:skilltest/features/auth/views/widgets/app_button.dart';
-import 'package:skilltest/features/bottom_nav/bottom_nav.dart';
 import 'package:skilltest/features/profile/pages/privacy_policy.dart';
 
 class LoginPage extends StatefulWidget {
