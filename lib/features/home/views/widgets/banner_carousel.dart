@@ -1,8 +1,12 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:skilltest/core/colors/colors.dart';
+import 'package:skilltest/core/helper/cache_manager.dart';
 import 'package:skilltest/features/home/bloc/banners/bloc/banner_bloc.dart';
 import 'package:skilltest/features/home/models/banner_model.dart';
+import 'package:skilltest/features/home/views/widgets/banner_loading.dart';
 
 class BannerCarousel extends StatelessWidget {
   const BannerCarousel({super.key});
@@ -12,7 +16,7 @@ class BannerCarousel extends StatelessWidget {
     return BlocBuilder<BannerBloc, BannerState>(
       builder: (context, state) {
         if (state is BannerLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return const BannerLoadingWidget();
         }
         if (state is BannerError) {
           return const Center(child: Text("Failed to load banners"));
@@ -26,10 +30,24 @@ class BannerCarousel extends StatelessWidget {
               final banner = banners[index];
               return ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.network(
-                  banner.image ?? "",
-                  errorBuilder: (context, error, _) =>
-                      Container(color: Colors.grey.shade200),
+                child: CachedNetworkImage(
+                  height: 120,
+                  width: double.infinity,
+                  imageUrl: banner.image ?? "",
+                  cacheManager: CacheManagerHelper.instance,
+                  placeholder: (context, url) {
+                    return Center(
+                      child: SizedBox(
+                        width: 40,
+                        height: 40,
+                        child: CircularProgressIndicator(
+                          color: kPrimary,
+                          strokeWidth: 3,
+                        ),
+                      ),
+                    );
+                  },
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               );
             },

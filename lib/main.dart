@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skilltest/core/themes/themes.dart';
-import 'package:skilltest/features/bottom_nav/bottom_nav.dart';
+import 'package:skilltest/features/auth/bloc/auth_bloc.dart';
 import 'package:skilltest/features/home/bloc/banners/bloc/banner_bloc.dart';
 import 'package:skilltest/features/home/bloc/products/bloc/product_bloc.dart';
+import 'package:skilltest/features/splash/pages/splash_page.dart';
+import 'package:skilltest/features/wishlist/bloc/wishlist_bloc.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,6 +16,8 @@ void main() {
       providers: [
         BlocProvider(create: (_) => ProductBloc()),
         BlocProvider(create: (_) => BannerBloc()),
+        BlocProvider(create: (_) => AuthBloc()),
+        BlocProvider(create: (_) => WishlistBloc()),
       ],
       child: MyApp(),
     ),
@@ -35,7 +39,7 @@ class MyApp extends StatelessWidget {
             child: MaterialApp(
               theme: themeData,
               debugShowCheckedModeBanner: false,
-              home: AppBottomNav(),
+              home: SplashPage(),
             ),
           );
         },

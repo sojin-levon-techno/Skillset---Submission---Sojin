@@ -12,7 +12,7 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Future.delayed(
-        const Duration(milliseconds: 1800),
+        const Duration(milliseconds: 2000),
         () => context.pushAndRemoveUntil(page: LoginPage()),
       );
     });

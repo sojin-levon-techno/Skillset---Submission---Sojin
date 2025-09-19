@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:skilltest/core/colors/colors.dart';
 import 'package:skilltest/features/home/views/pages/home_page.dart';
+import 'package:skilltest/features/profile/pages/profile_page.dart';
+import 'package:skilltest/features/wishlist/views/pages/wishlist_page.dart';
 
 class AppBottomNav extends StatefulWidget {
-  const AppBottomNav({super.key});
+  final String? name;
+  final String? phoneNumber;
+
+  const AppBottomNav({super.key, this.name, this.phoneNumber});
 
   @override
   State<AppBottomNav> createState() => _AppBottomNavState();
@@ -13,19 +18,19 @@ class AppBottomNav extends StatefulWidget {
 class _AppBottomNavState extends State<AppBottomNav> {
   final ValueNotifier<int> _selectedIndex = ValueNotifier<int>(0);
 
-  final List<Widget> _pages = const [
-    HomePage(),
-    Center(child: Text('Wishlist Page')),
-    Center(child: Text('Profile Page')),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final List<Widget> pages = [
+      const HomePage(),
+      const WishlistPage(),
+      ProfilePage(name: widget.name, phoneNumber: widget.phoneNumber),
+    ];
+
     return Scaffold(
       body: ValueListenableBuilder<int>(
         valueListenable: _selectedIndex,
         builder: (context, index, _) {
-          return IndexedStack(index: index, children: _pages);
+          return IndexedStack(index: index, children: pages);
         },
       ),
       bottomNavigationBar: ValueListenableBuilder<int>(

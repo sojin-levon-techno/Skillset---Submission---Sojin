@@ -37,11 +37,14 @@ dependencies:
   flutter_bloc: ^9.1.1
   equatable: ^2.0.7
   http: ^1.5.0
-  shared_preferences: ^2.5.3
   flutter_animate: ^4.5.2
   flutter_secure_storage: ^9.2.4
   google_nav_bar: ^5.0.7
   carousel_slider: ^5.1.1
+  cached_network_image: ^3.4.1
+  pinput: ^5.0.2
+  flutter_cache_manager: ^3.4.1
+  skeletonizer: ^2.1.0+1
 
 dev_dependencies:
   flutter_test:
