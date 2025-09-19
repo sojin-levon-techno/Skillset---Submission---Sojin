@@ -21,7 +21,7 @@ A Flutter application built as part of the **Skill Test**, showcasing clean arch
   <img src="assets/images/im3.jpeg" width="200" />
   <img src="assets/images/im4.jpeg" width="200" />
 </p>
----
+
 
 ## 🛠️ Tech Stack
 - **Framework**: Flutter (3.35.2)
